@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public PlayerAIInteractions playerAIInteractions;
     public PlayerInput playerInput;
     public PlayerAnimations playerAnimations;
-	public GameObject ui_window;
+    public UIController uiController;
 
     private void Start()
     {
@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
         playerAnimations.SetupAnimations(playerInput.MovementInputVector);
         if (playerInput.MovementInputVector.magnitude > 0)
         {
-            ui_window.SetActive(false);
-        }
+            uiController.ToggleUI(false);
+		}
     }
 
     public void ReceiveDamaged()
