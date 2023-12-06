@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class NPC_Friendly : MonoBehaviour
+public class NPC_Friendly : NPC
 {
-	public UnityEvent<string> OnSpeak;
-	public AudioSource audioSource;
     public string text = "Hi there. Look out for that KOBOLD on the other side!";
 
-    public void Talk()
-    {
-		OnSpeak?.Invoke(text);
-		audioSource.Play();
-    }
+	protected override string GetText()
+	{
+		return text;
+	}
 }

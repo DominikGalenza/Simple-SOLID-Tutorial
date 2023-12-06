@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class PlayerInput : MonoBehaviour, IMovementInput
 {
-    public Vector2 MovementInputVector { get; private set; }
-    public event Action OnInteractEvent;
+	public Vector2 MovementInputVector { get; private set; }
+	public event Action OnInteractEvent;
 
 	private void Update()
 	{
