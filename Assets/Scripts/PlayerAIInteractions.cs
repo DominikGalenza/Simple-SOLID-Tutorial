@@ -16,6 +16,9 @@ public class PlayerAIInteractions : MonoBehaviour
 			{
 				hit.collider.GetComponent<NPC>().Interact();
 			}
+
+			IHittable hittable = hit.collider.GetComponent<IHittable>();
+			hittable?.GetHit();
 		}
 	}
 }
